@@ -6,6 +6,8 @@ const cors = require("cors");
 const projectController  = require("./controller/projectController.js");
 const newController  = require("./controller/newController.js");
 const contactController  = require("./controller/contactController.js");
+const adminController  = require("./controller/adminController.js");
+const visitorController = require('./controller/visitorController');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -19,4 +21,6 @@ app.listen(PORT, () =>{
 app.use("/api", projectController);
 app.use("/api", newController);
 app.use("/api", contactController);
+app.use("/api", adminController);
+app.use("/api", visitorController);
 
